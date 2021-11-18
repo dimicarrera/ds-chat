@@ -7,9 +7,9 @@ import { Sidebar } from "../components/Sidebar";
 import { ChatWindow } from "../components/ChatWindow";
 import { Navbar } from "../components/Navbar";
 
-import { getUsers } from "../store/slices/users.slice";
 import { getMessages, sendMessage } from "../store/slices/messages.slice";
 import {
+  getUsers,
   sendThisUserIsTyping,
   sendThisUserStoppedTyping,
 } from "../store/slices/users.slice";

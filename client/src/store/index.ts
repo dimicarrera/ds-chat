@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 
 import { rootReducer } from "./rootReducer";
 
@@ -9,5 +9,5 @@ const socket = new SocketClient();
 
 export const store = configureStore({
   reducer: rootReducer,
-  middleware: [socketMiddleware(socket)],
+  middleware: [socketMiddleware(socket), ...getDefaultMiddleware()],
 });
