@@ -41,6 +41,8 @@ const usersSlice = createSlice({
         (username) => username !== payload
       );
     },
+    sendThisUserIsTyping: (state, { payload }: PayloadAction<any>) => {},
+    sendThisUserStoppedTyping: (state, { payload }: PayloadAction<any>) => {},
   },
 });
 
@@ -52,12 +54,14 @@ export const {
   setLoadingComplete,
   setTypingUser,
   removeTypingUser,
+  sendThisUserIsTyping,
+  sendThisUserStoppedTyping
 } = usersSlice.actions;
 export default usersSlice.reducer;
 
 // Action
 export function getUsers() {
-  return async (dispatch: Dispatch, getState: () => {}) => {
+  return async (dispatch: Dispatch) => {
     dispatch(setLoading());
 
     try {
