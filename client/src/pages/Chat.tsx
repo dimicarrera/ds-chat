@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 
 import { Sidebar } from "../components/Sidebar";
 import { ChatWindow } from "../components/ChatWindow";
+import { Navbar } from "../components/Navbar";
 
 import { getUsers } from "../store/slices/users.slice";
 import { getMessages, sendMessage } from "../store/slices/messages.slice";
@@ -64,7 +65,7 @@ export const Chat: React.FC = () => {
 
   return (
     <>
-      <div onClick={() => {}} />
+      <Navbar onClick={() => {}} />
       <div>
         <Sidebar
           currentUser={currentUser}
