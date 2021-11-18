@@ -13,6 +13,7 @@ import {
   sendThisUserIsTyping,
   sendThisUserStoppedTyping,
 } from "../store/slices/users.slice";
+import { logout } from "../store/slices/auth.slice";
 
 import { RootState, Message } from "../utils/types";
 
@@ -47,7 +48,6 @@ export const Chat: React.FC = () => {
       dispatch(sendThisUserStoppedTyping(currentUser!.username));
       dispatch(sendMessage(message));
     }
-
     setMessageInput("");
   };
 
@@ -58,15 +58,31 @@ export const Chat: React.FC = () => {
     setMessageInput(event.target.value);
   };
 
+  const handleLogoutClick = (event: any) => {
+    localStorage.removeItem("user");
+    dispatch(logout());
+  };
+
   useEffect(() => {
     dispatch(getUsers());
     dispatch(getMessages());
   }, [dispatch]);
 
+  // remove "is typing" if messageInput is empty
+  useEffect(() => {
+    if (messageInput === "") {
+      dispatch(sendThisUserStoppedTyping(currentUser!.username));
+
+      setTimeout(() => {
+        dispatch(sendThisUserStoppedTyping(currentUser!.username));
+      }, 1000);
+    }
+  }, [messageInput, currentUser, dispatch]);
+
   return (
     <>
-      <Navbar onClick={() => {}} />
-      <div>
+      <Navbar onClick={handleLogoutClick} />
+      <div className="content">
         <Sidebar
           currentUser={currentUser}
           users={users}
