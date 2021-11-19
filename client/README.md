@@ -1,18 +1,62 @@
-# Getting Started with Create React App
+# Chat App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A chat application using React, Redux Toolkit, Socket.io, and Tailwind CSS.
+## Setup
+
+### Install dependencies
+
+Install the dependencies for the client and server.
+
+```bash
+# in one terminal window
+cd server && yarn
+# in another terminal window
+cd client && yarn
+```
+
+### Start server
+
+An Express server is maintaining a Socket.io connection, persisting data short-term in memory, and exposes an API for accessing persistent data.
+
+```bash
+# in /server
+yarn start
+```
+
+> Server is running on `localhost:5000`.
+
+### Start client
+
+A React-Redux server for the front-end.
+
+```bash
+# in /client
+yarn start
+```
+
+> Client server is running on `localhost:3000`.
+
+You can view the app at `localhost:3000`. Log in with any valid email and username, and you'll enter into the general chatroom, which will display all users (also listing which are currently online) and all messages.
+
+## Todos
+
+- [x] Create Login page
+- [x] Implement Socket.io server
+- [x] Add "user is typing"
+- [ ] Add themes
+- [ ] Add settings modal
+- [ ] Duplicate users should be checked and not allowed
+- [ ] Add error handling
+- [ ] Add personal chats
+- [ ] Add reactions to messages
+- [ ] Add tests
+  - [ ] Jest Unit tests
+  - [ ] React Testing Library component tests
+
 
 ## Available Scripts
 
 In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
 ### `yarn test`
 
