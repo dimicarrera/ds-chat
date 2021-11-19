@@ -5,10 +5,10 @@ import { useDispatch } from "react-redux";
 import { PrivateRoute } from "./routes/PrivateRoute";
 import { PublicRoute } from "./routes/PublicRoute";
 
-import { Login } from './pages/Login'
-import { Chat } from './pages/Chat'
+import { Login } from "./pages/Login";
+import { Chat } from "./pages/Chat";
 
-import { login } from './store/slices/auth.slice'
+import { login } from "./store/slices/auth.slice";
 
 export const App = () => {
   const dispatch = useDispatch();

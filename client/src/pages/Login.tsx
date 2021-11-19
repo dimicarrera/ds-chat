@@ -9,6 +9,8 @@ import { validateEmail, validateTextField } from "../utils/validate";
 
 import logo from "../assets/logo.png";
 
+import classnames from "./Login.module.css";
+
 export interface FormFields {
   email: string;
   username: string;
@@ -67,17 +69,27 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <div>
-      <div className="container">
-        <img src={logo} alt="DS chat demo app" />
-        <h1>Sign In</h1>
-
-        <form onSubmit={handleSubmit}>
+    <div className={classnames.loginWrapper}>
+      <div className={classnames.container}>
+        <div className={classnames.loginHeading}>
+          <img
+            src={logo}
+            alt="DS chat demo app"
+            className={classnames.loginLogo}
+          />
+          <div className={classnames.loginGreeting}>
+            <h1 className={classnames.loginH1}>
+              Welcome{user.username && ","}
+            </h1>
+            <h2 className={classnames.loginH2}>{user.username}</h2>
+          </div>
+        </div>
+        <form onSubmit={handleSubmit} className={classnames.form}>
           <Input
             label="Email Address"
             name="email"
             value={user.email}
-            placeholder="your@email.com"
+            placeholder="any@email.com"
             onChange={handleChange}
             onBlur={handleBlur}
             error={errors.email}
@@ -94,7 +106,6 @@ export const Login: React.FC = () => {
           <div>
             <button disabled={isLoginButtonDisabled()}>Sign in</button>
           </div>
-          <p>Don't have an account yet? That's fine.</p>
         </form>
       </div>
     </div>
