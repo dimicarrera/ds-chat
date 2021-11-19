@@ -1,6 +1,6 @@
 # Chat App
 
-A chat application using React, Redux Toolkit, TypeScript, Jest and Socket.io.
+A demo chat application using React, Redux Toolkit, TypeScript, Jest and Socket.io.
 ## Setup
 
 ### Install dependencies
@@ -9,9 +9,11 @@ Install the dependencies for the client and server.
 
 ```bash
 # in one terminal window
-cd server && yarn
+cd server
+yarn
 # in another terminal window
-cd client && yarn
+cd client
+yarn
 ```
 
 ### Start server
