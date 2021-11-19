@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import _ from "lodash";
 import dayjs from "dayjs";
@@ -24,7 +24,7 @@ export const Chat: React.FC = () => {
   const [messageInput, setMessageInput] = useState("");
 
   const { currentUser } = useSelector((state: RootState) => state.authState);
-  const { users, typingUsers } = useSelector(
+  const { users, typingUsers, onlineUsersByUsername } = useSelector(
     (state: RootState) => state.usersState
   );
   const { messages } = useSelector((state: RootState) => state.messagesState);
@@ -81,13 +81,26 @@ export const Chat: React.FC = () => {
     }
   }, [messageInput, currentUser, dispatch]);
 
+  const usersWithOnlineData = useMemo(() => {
+    if (users.length < 1) {
+      return []
+    }
+
+    return users
+      .map((user) => ({
+        ...user,
+        online: onlineUsersByUsername.some((onlineUsername) => onlineUsername === user.username),
+      }))
+      .sort((a, b) => a.username.localeCompare(b.username))
+  }, [users, onlineUsersByUsername])
+
   return (
     <>
       <Navbar onClick={handleLogoutClick} />
       <div className={classnames.content}>
         <Sidebar
           currentUser={currentUser}
-          users={users}
+          users={usersWithOnlineData}
           typingUsers={typingUsers}
         />
         <ChatWindow
