@@ -39,7 +39,8 @@
 
 .loginH2 {
   margin: 0;
-  font-size: 2rem;
+  line-height: 2rem;
+  font-size: 1.6rem;
   background-image: linear-gradient(45deg, #e21143, #ecb35d);
   background-clip: text;
   color: transparent;
@@ -47,4 +48,24 @@
 
 .form {
   padding: 1rem 0;
+}
+
+.button {
+  min-width: 150px;
+  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
+  background-color: #37da60;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  color: black;
+}
+
+.button:hover {
+  background-color: #82e79c;
+}
+
+.button:disabled {
+  background-color: #efeefe;
+  cursor: not-allowed;
 }

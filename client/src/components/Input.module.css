@@ -1,0 +1,31 @@
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 110px;
+}
+
+.input {
+  height: 2.7rem;
+  border-radius: 0.5rem;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+}
+
+.input:focus {
+  box-shadow: 0 0 5px #212188;
+  outline: none;
+}
+
+.input::placeholder {
+  font-family: 'Mukta', sans-serif;
+}
+
+.inputError {
+  color: red;
+  font-weight: 300;
+  line-height: 2rem;
+}
