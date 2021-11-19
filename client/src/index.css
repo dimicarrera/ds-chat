@@ -16,10 +16,6 @@ h5,
 h6 {
   font-family: "Zen Antique", serif;
 }
-/* Top nav bar */
-.nav {
-  height: 80px;
-}
 
 /* The rest of the content */
 .content {

@@ -1,0 +1,31 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.heading {
+  display: flex;
+}
+
+.logo {
+  object-fit: contain;
+  max-width: 100px;
+  margin-right: 1rem;
+}
+
+.button {
+  padding: 1rem 2rem;
+  font-family: 'Mukta', sans-serif;
+  font-size: 1rem;
+  background-color: #379eda;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  color: black;
+}
+
+.button:hover {
+  background-color: #64b7e7;
+}
