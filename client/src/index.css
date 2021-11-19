@@ -17,12 +17,6 @@ h6 {
   font-family: "Zen Antique", serif;
 }
 
-/* The rest of the content */
-.content {
-  margin-top: 80px;
-  height: calc(100vh - 80px);
-}
-
 /* Scrollable chat area */
 .chat {
   height: calc(100vh - 80px);

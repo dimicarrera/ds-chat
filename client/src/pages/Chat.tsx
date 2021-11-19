@@ -17,6 +17,8 @@ import { logout } from "../store/slices/auth.slice";
 
 import { RootState, Message } from "../utils/types";
 
+import classnames from "./Chat.module.css";
+
 export const Chat: React.FC = () => {
   const dispatch = useDispatch();
   const [messageInput, setMessageInput] = useState("");
@@ -82,7 +84,7 @@ export const Chat: React.FC = () => {
   return (
     <>
       <Navbar onClick={handleLogoutClick} />
-      <div className="content">
+      <div className={classnames.content}>
         <Sidebar
           currentUser={currentUser}
           users={users}

@@ -1,6 +1,6 @@
 # Chat App
 
-A chat application using React, Redux Toolkit, Socket.io, and Tailwind CSS.
+A chat application using React, Redux Toolkit, TypeScript, Jest and Socket.io.
 ## Setup
 
 ### Install dependencies
